@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="edu.training.droidbountyhunter.AgregarActivity">
+    <item
+        android:id="@+id/menu_guardar_fugitivo"
+        android:icon="@drawable/save"
+        android:orderInCategory="100"
+        android:title="@string/menu_guardar_figitivo"
+        app:showAsAction="ifRoom" />
+</menu>

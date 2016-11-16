@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">DroidBountyHunter</string>
+    <string name="title_section1">Sección 1</string>
+    <string name="title_section2">Sección 2</string>
+    <string name="title_section3">Sección 3</string>
+    <string name="hello_world">Hola mundo!!</string>
+    <string name="action_settings">Configuración</string>
+    <string name="section_format">Hola mundo desde la sección: %1$d</string>
+    <string name="title_capturados">Capturados</string>
+    <string name="title_fugitivos">Fugitivos</string>
+    <string name="title_acercade">Acerca de...</string>
+    <string name="menu_agregar">Agregar</string>
+    <string name="menu_guardar_figitivo">Guardar fugitivo</string>
+    <string name="boton_guardar">Guardar</string>
+    <string name="boton_capturar">Capturar</string>
+    <string name="boton_eliminar">Eliminar</string>
+    <string name="campo_nombre">Nombre del Fugitivo</string>
+    <string name="about_nombreAutor">Eden Rodrigo Verdugo García</string>
+    <string name="about_desarrolladoPor">Desarrollado por:</string>
+    <string name="title_activity_agregar">Nuevo Fugitivo</string>
+    <string name="title_activity_detalle">Detalle Fugitivo</string>
+    <string name="boton_foto">Tomar Foto</string>
+    <string name="boton_mapa">Ver Mapa</string>
+</resources>

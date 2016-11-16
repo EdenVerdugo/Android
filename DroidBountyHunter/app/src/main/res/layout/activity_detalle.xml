@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    tools:context=".DetalleActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarDetalle"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_scrollFlags="scroll|enterAlways"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    </android.support.v7.widget.Toolbar>
+    <ScrollView
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|top"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/lblMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Mensaje..."
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            />
+
+        <!--Button
+            android:id="@+id/btnCap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:minHeight="30dp"
+            android:minWidth="100dp"
+            android:text="@string/boton_capturar"
+            android:onClick="onCaptureClick"
+            android:textAppearance="?android:attr/textAppearanceSmallInverse"
+            />
+
+        <Button
+            android:id="@+id/btnDel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="30dp"
+            android:minWidth="100dp"
+            android:text="@string/boton_eliminar"
+            android:onClick="onDeleteClick"
+            android:textAppearance="?android:attr/textAppearanceSmallInverse"
+            /-->
+
+        <ImageView
+            android:id="@+id/imgFoto"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="Foto"
+            android:maxHeight="200dp"
+            android:maxWidth="200dp"
+            android:minHeight="200dp"
+            android:minWidth="200dp"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/ic_menu_camera"
+            />
+
+        <!--Button
+            android:id="@+id/btnFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:minHeight="30dp"
+            android:minWidth="100dp"
+            android:text="@string/boton_foto"
+            android:textAppearance="?android:attr/textAppearanceSmallInverse"
+            android:onClick="onFotoClick"
+            />
+
+        <Button
+            android:id="@+id/btnMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="30dp"
+            android:minWidth="100dp"
+            android:onClick="onMapClick"
+            android:text="@string/boton_mapa"
+            android:textAppearance="?android:attr/textAppearanceSmallInverse"
+            /-->
+
+
+    </LinearLayout>
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>
