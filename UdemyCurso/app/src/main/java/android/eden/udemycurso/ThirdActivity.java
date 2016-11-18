@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringDef;
 import android.support.v4.app.ActivityCompat;
@@ -19,7 +20,7 @@ import android.widget.Toast;
 public class ThirdActivity extends AppCompatActivity {
 
     private EditText txtTelefono = null;
-    private EditText txtVer = null;
+    private EditText txtWeb = null;
 
     private ImageButton imgbtnTelefono = null;
     private ImageButton imgbtnWeb = null;
@@ -33,7 +34,7 @@ public class ThirdActivity extends AppCompatActivity {
         setContentView(R.layout.activity_third);
 
         txtTelefono = (EditText) findViewById(R.id.txtTelefono);
-        txtVer = (EditText) findViewById(R.id.txtWeb);
+        txtWeb = (EditText) findViewById(R.id.txtWeb);
 
         imgbtnTelefono = (ImageButton) findViewById(R.id.imgbtnTelefono);
         imgbtnWeb = (ImageButton) findViewById(R.id.imgbtnWeb);
@@ -48,7 +49,35 @@ public class ThirdActivity extends AppCompatActivity {
                 if (numTelefono != "") {
                     //comprobar version actual
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        NewerVersions();
+
+                        //comprobar si ha aceptado o no ha aceptado o nunca se le ha preguntado
+                        if(CheckPermission(Manifest.permission.CALL_PHONE)){
+                            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + numTelefono));
+                            if (ActivityCompat.checkSelfPermission(ThirdActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                                return;
+                            }
+                            startActivity(intent);
+                        }
+                        else{
+                            if(!shouldShowRequestPermissionRationale(Manifest.permission.CALL_PHONE)){
+                                //no se ha preguntado aun
+                                requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, PHONE_CALL_CODE);
+                            }
+                            else{
+                                //denegado
+                                Toast.makeText(ThirdActivity.this, "Por favor activa este permiso", Toast.LENGTH_SHORT).show();
+                                Intent i = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                                i.addCategory(Intent.CATEGORY_DEFAULT);
+                                i.setData(Uri.parse("package:" + getPackageName()));
+                                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                                i.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+
+                                startActivity(i);
+                            }
+                        }
+
+                        //NewerVersions();
                     } else {
                         OlderVersions(numTelefono);
                     }
@@ -65,8 +94,19 @@ public class ThirdActivity extends AppCompatActivity {
                 }
             }
 
-            private void NewerVersions() {
-                requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, PHONE_CALL_CODE);
+        });
+
+        imgbtnWeb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = txtWeb.getText().toString();
+                if(url != null && !url.isEmpty()){
+                    Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("http://" + url));
+                    //i.setAction(Intent.ACTION_VIEW);
+                    //i.setData(Uri.parse("http://" + url));
+
+                    startActivity(i);
+                }
             }
         });
     }
