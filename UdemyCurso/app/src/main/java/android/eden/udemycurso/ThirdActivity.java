@@ -35,6 +35,13 @@ public class ThirdActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        // forzar y cargar icono inicio
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_myicon);
+        // forzar y cargar icono fin
+
         txtTelefono = (EditText) findViewById(R.id.txtTelefono);
         txtWeb = (EditText) findViewById(R.id.txtWeb);
 
