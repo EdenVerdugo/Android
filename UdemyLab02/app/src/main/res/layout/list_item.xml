@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/imageFruit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_apple"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="10dp"
+        />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        >
+        <TextView
+            android:id="@+id/tvFruitName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Manzana"
+            android:textSize="22dp"
+            />
+        <TextView
+            android:id="@+id/tvFruitOrigin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Sinaloa"
+            android:textSize="12dp"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

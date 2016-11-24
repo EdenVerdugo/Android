@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_thrid"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="android.eden.app.udemilab01.ThridActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btnsiguiente"
+        android:gravity="center_vertical"
+        >
+        <Button
+            android:id="@+id/btnmostrarmensaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mostrarmensaje"
+            android:background="@color/colorAccent"
+            android:layout_margin="25dp"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btncompartir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/share"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_second"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="android.eden.app.udemilab01.SecondActivity">
+    <Button
+        android:id="@+id/btnsiguiente"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Next"
+        android:background="@color/colorAccent"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnsiguiente"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        >
+
+        <RadioGroup
+            android:id="@+id/rdgrupo"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            >
+            <RadioButton
+                android:id="@+id/rdsaludo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/saludo"
+                android:layout_marginRight="10dp"
+                android:checked="true"
+                />
+            <RadioButton
+                android:id="@+id/rddespedida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/despedida"/>
+        </RadioGroup>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/edad"
+                android:textSize="20dp"
+                />
+            <TextView
+                android:id="@+id/tvedad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"/>
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/seekedad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
